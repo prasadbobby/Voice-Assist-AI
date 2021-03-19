@@ -1,4 +1,4 @@
-from package import *
+from Package import *
 
 engine = pyttsx3.init()
 def speak(audio):
