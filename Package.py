@@ -7,4 +7,4 @@ import webbrowser as wb                                 # pip install webbrowser
 import os 
 import pyautogui                                        # pip install pyautogui
 import psutil                       
-import pyjokes
+import pyjokes                                          # pip install pyjokes
