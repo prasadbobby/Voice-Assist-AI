@@ -16,10 +16,10 @@ if __name__ == "__main__":                                                      
     while True:
         query = takeCommand().lower()
 
-        if 'time' in query:
+        if 'time' in query:                                                                   # if there is a word 'time' in the query, then it will call the time().
             time()
 
-        elif 'date' in query:
+        elif 'date' in query:                                                                 # It will call date() when there is a word 'date' in your query.
             date()
 
         elif 'wikipedia' in query:
@@ -47,13 +47,13 @@ if __name__ == "__main__":                                                      
             search = takeCommand().lower()
             wb.get(chromepath).open_new_tab(search)
 
-        elif 'logout' in query:
+        elif 'logout' in query:                                                                # It will logout if you give logout as a word input
             os.system("Shutdown -l")
 
-        elif 'shutdown' in query:
-            os.system("Shutdown /s /t 1")
+        elif 'shutdown' in query:                                                              # It will shutdown the system. Make sure that all the data is saved in your computer if you want to shutdown the computer.
+            os.system("Shutdown /s /t 1")                                                      # try at your own risk, because some data may not come back after the shutdown process.
 
-            elif 'restart' in query:
+            elif 'restart' in query:                                                           # It will restart the computer if you give restart as the command.
             os.system("Shutdown /r /t 1")
 
         elif 'play songs' in query:
@@ -61,7 +61,7 @@ if __name__ == "__main__":                                                      
             songs = os.listdir(songs_dir)
             os.startfile(os.path.join(songs_dir, songs[0]))
             
-        # create a new file named "data.txt" and place the file in the same directory.
+                                                                                               # create a new file named "data.txt" and place the file in the same directory.
         elif 'remember that' in query:
             speak("What should I remember? ")
             data = takeCommand()
@@ -70,19 +70,19 @@ if __name__ == "__main__":                                                      
             remember.wriet(data)
             remember.close()                                                                    
 
-        elif 'do you know' in query:
-            remember = open('data.txt', 'r')
-            speak("You said me to remember that"+remember.read())
+        elif 'do you know' in query:                                                           # If there is a command 'do you know', then it will check if there is anything saved in the data.txt file
+            remember = open('data.txt', 'r')                                                   # If there is anything in the file, then it will speak out the saved ones.
+            speak("You said me to remember that"+remember.read())                                   
 
-        elif 'screenshot' in query:
+        elif 'screenshot' in query:                                                             # It will take the screenshot and saves the screenshot in the same directory.
             screenshot()
             speak("Screenhot taken")
 
-        elif 'cpu' in query:
+        elif 'cpu' in query:                                                                    # speaks the state of CPU in your computer.
             cpu()
 
-        elif 'joke' in query:
+        elif 'joke' in query:                                                                   # speaks a random joke from pyjokes package in Package.py file
             jokes()
 
-        elif 'offline' in query:
+        elif 'offline' in query:                                                                # quits the program when there is a word 'offline' in your query.
             quit()
