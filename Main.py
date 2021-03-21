@@ -22,14 +22,14 @@ if __name__ == "__main__":                                                      
         elif 'date' in query:                                                                 # It will call date() when there is a word 'date' in your query.
             date()
 
-        elif 'wikipedia' in query:
+        elif 'wikipedia' in query:                                                            # it will search on wikipedia without any opening of browser.
             speak("Searching..")
             query = query.replace("wikipedia", "")
             result = wikipedia.summary(query, sentences=2)
             print(result)
             query(result)
 
-        elif 'send mail' in query:
+        elif 'send mail' in query:                                                            # sendMail() excutes from the SendMail.py file
             try:
                 speak("What should I say? ")
                 content = takeCommand()
@@ -41,9 +41,9 @@ if __name__ == "__main__":                                                      
                 print(e)
                 speak("Unable to send Email, Please Check your internet connection")
 
-        elif 'search in chrome' in query:
+        elif 'search in chrome' in query:                                                      # It will opens the chrome and search for the results.
             speak("What should I search?")
-            chromepath = 'C:/Programming Files (x86)/Google/Chrome/Application/chrome.exe %s'
+            chromepath = 'C:/Programming Files (x86)/Google/Chrome/Application/chrome.exe %s'  # if it does not opens, then check the path and recorrect with your own path.
             search = takeCommand().lower()
             wb.get(chromepath).open_new_tab(search)
 
