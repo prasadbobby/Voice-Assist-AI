@@ -6,8 +6,6 @@ from Jokes import *                                                             
 from ScreenShot import *                                                                      # importing screenshot() from Screenshot.py
 from SendMail import *                                                                        # importing sendMail() from SendMail.py
 from TakeCommand import *                                                                     # importing takeCommand() from TakeCommand.py
-from Hour import *                                                                            # importing hour() from Hour.py 
-
 
 # If you need complete code in a single file then go to "Assistant.py" in this directory.
 # If you want to run the code in your machine, then install all the packages from Package.py file and cross-check whether all the packages are installed correctly.
@@ -53,7 +51,7 @@ if __name__ == "__main__":                                                      
         elif 'shutdown' in query:                                                              # It will shutdown the system. Make sure that all the data is saved in your computer if you want to shutdown the computer.
             os.system("Shutdown /s /t 1")                                                      # try at your own risk, because some data may not come back after the shutdown process.
 
-            elif 'restart' in query:                                                           # It will restart the computer if you give restart as the command.
+        elif 'restart' in query:                                                           # It will restart the computer if you give restart as the command.
             os.system("Shutdown /r /t 1")
 
         elif 'play songs' in query:

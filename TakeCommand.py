@@ -1,5 +1,5 @@
 from Package import *
-from Speak
+from Speak import *
 
 def takeCommand():
     r = sr.Recognizer()
