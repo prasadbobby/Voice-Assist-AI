@@ -1,6 +1,9 @@
 import speech_recognition as sr 
-from Speak import *
-
+import pyttsx3
+engine = pyttsx3.init()
+def speak(audio):
+  engine.say(audio)
+  engine.runAndWait()
 def takeCommand():
     r = sr.Recognizer()
     with sr.Microphone() as source:

@@ -13,6 +13,7 @@ engine = pyttsx3.init()
 def speak(audio):
   engine.say(audio)
   engine.runAndWait()
+  
 
 if __name__ == "__main__":                                                                    # main function of the project.                                               
     while True:
@@ -63,16 +64,16 @@ if __name__ == "__main__":                                                      
             songs = os.listdir(songs_dir)
             os.startfile(os.path.join(songs_dir, songs[0]))
             
-        elif 'remember that' in query:
+        elif 'remember' in query:
             speak("What should I remember? ")
             data = takeCommand()
             speak("you said me to remember "+data)
-            remember = open('data.txt', 'w')
-            remember.wriet(data)
+            remember = open('Data/data.txt', 'w')
+            remember.write(data)
             remember.close()                                                                    
 
         elif 'do you know' in query:                                                           # If there is a command 'do you know', then it will check if there is anything saved in the data.txt file
-            remember = open('data.txt', 'r')                                                   # If there is anything in the file, then it will speak out the saved ones.
+            remember = open('Data/data.txt', 'r')                                                   # If there is anything in the file, then it will speak out the saved ones.
             speak("You said me to remember that"+remember.read())                                   
 
         elif 'screenshot' in query:                                                             # It will take the screenshot and saves the screenshot in the same directory.
