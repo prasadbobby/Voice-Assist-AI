@@ -1,4 +1,4 @@
-from Package import *
+# from Package import *
 from Speak import *
 
 def jokes():

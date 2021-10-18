@@ -1,10 +1,10 @@
-from Package import *                                                                         # importing packages from Package.py file
-from Speak import *                                                                           # importing speak() function from Speak.py
-from CPU import *                                                                             # importing cpu() function from CPU.py
-from DateTime import *                                                                        # importing date() and time() from DateTime.py
-from Jokes import *                                                                           # importing jokes() from Jokes.py
-from ScreenShot import *                                                                      # importing screenshot() from Screenshot.py
-from SendMail import *                                                                        # importing sendMail() from SendMail.py
+# # from Package import *                                                                         # importing packages from Package.py file
+# from Speak import *                                                                           # importing speak() function from Speak.py
+import CPU.CPU                                                                           # importing cpu() function from CPU.py
+# from DateTime import *                                                                        # importing date() and time() from DateTime.py
+# from Jokes import *                                                                           # importing jokes() from Jokes.py
+# from ScreenShot import *                                                                      # importing screenshot() from Screenshot.py
+# # from SendMail import *                                                                        # importing sendMail() from SendMail.py
 from TakeCommand import *                                                                     # importing takeCommand() from TakeCommand.py
 
 # If you need complete code in a single file then go to "Assistant.py" in this directory.
@@ -77,7 +77,7 @@ if __name__ == "__main__":                                                      
             speak("Screenhot taken")
 
         elif 'cpu' in query:                                                                    # speaks the state of CPU in your computer.
-            cpu()
+            CPU.CPU.cpu()
 
         elif 'joke' in query:                                                                   # speaks a random joke from pyjokes package in Package.py file
             jokes()

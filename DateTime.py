@@ -1,4 +1,4 @@
-from Package import *                                               # import packages from Package.py file in the same directory
+# from Package import *                                               # import packages from Package.py file in the same directory
 from Speak import *                                                 # import speak function from Speak.py file
 def time():                                                         # Created time() function.
   time = datetime.datetime.now().strftime("%I:%M:%S")

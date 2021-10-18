@@ -1,4 +1,4 @@
-from Package import *
+import speech_recognition as sr 
 from Speak import *
 
 def takeCommand():
