@@ -1,11 +1,10 @@
 import pyttsx3
-
+import pyjokes
 
 engine = pyttsx3.init()
 def speak(audio):
   engine.say(audio)
   engine.runAndWait()
 
-
-# speak("hello world")
-  
+def jokes():
+    speak(pyjokes.get_joke())                       

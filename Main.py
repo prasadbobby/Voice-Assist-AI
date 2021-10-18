@@ -1,24 +1,28 @@
-# # from Package import *                                                                         # importing packages from Package.py file
-# from Speak import *                                                                           # importing speak() function from Speak.py
 import CPU.CPU                                                                           # importing cpu() function from CPU.py
-# from DateTime import *                                                                        # importing date() and time() from DateTime.py
-# from Jokes import *                                                                           # importing jokes() from Jokes.py
-# from ScreenShot import *                                                                      # importing screenshot() from Screenshot.py
-# # from SendMail import *                                                                        # importing sendMail() from SendMail.py
+import DateTime.DateTime                                                                  
+import Jokes.Jokes                                                                         # importing jokes() from Jokes.py
+import ScreenShots.ScreenShot                                                                      # importing screenshot() from Screenshot.py
+import MailSender.SendMail                                                                       # importing sendMail() from SendMail.py
 from TakeCommand import *                                                                     # importing takeCommand() from TakeCommand.py
+import pyttsx3
+import webbrowser as wb
+import wikipedia
+import os
 
-# If you need complete code in a single file then go to "Assistant.py" in this directory.
-# If you want to run the code in your machine, then install all the packages from Package.py file and cross-check whether all the packages are installed correctly.
+engine = pyttsx3.init()
+def speak(audio):
+  engine.say(audio)
+  engine.runAndWait()
 
 if __name__ == "__main__":                                                                    # main function of the project.                                               
     while True:
         query = takeCommand().lower()
 
         if 'time' in query:                                                                   # if there is a word 'time' in the query, then it will call the time().
-            time()
+            DateTime.DateTime.time()
 
         elif 'date' in query:                                                                 # It will call date() when there is a word 'date' in your query.
-            date()
+            DateTime.DateTime.date()
 
         elif 'wikipedia' in query:                                                            # it will search on wikipedia without any opening of browser.
             speak("Searching..")
@@ -29,10 +33,10 @@ if __name__ == "__main__":                                                      
 
         elif 'send mail' in query:                                                            # sendMail() excutes from the SendMail.py file
             try:
-                speak("What should I say? ")
+                speak("What should I send? ")
                 content = takeCommand()
-                to = 'mahendrasaikumargandham@gmail.com'
-                # sendEmail(to, content)
+                to = 'Client_mail_address@domain.com'
+                MailSender.SendMail.sendMail(to, content)
                 speak(content)
                 speak("E mail has been sent!")
             except Exception as e:
@@ -41,7 +45,7 @@ if __name__ == "__main__":                                                      
 
         elif 'search in chrome' in query:                                                      # It will opens the chrome and search for the results.
             speak("What should I search?")
-            chromepath = 'C:/Programming Files (x86)/Google/Chrome/Application/chrome.exe %s'  # if it does not opens, then check the path and recorrect with your own path.
+            chromepath = 'your chrome application path' 
             search = takeCommand().lower()
             wb.get(chromepath).open_new_tab(search)
 
@@ -59,7 +63,6 @@ if __name__ == "__main__":                                                      
             songs = os.listdir(songs_dir)
             os.startfile(os.path.join(songs_dir, songs[0]))
             
-                                                                                               # create a new file named "data.txt" and place the file in the same directory.
         elif 'remember that' in query:
             speak("What should I remember? ")
             data = takeCommand()
@@ -73,14 +76,14 @@ if __name__ == "__main__":                                                      
             speak("You said me to remember that"+remember.read())                                   
 
         elif 'screenshot' in query:                                                             # It will take the screenshot and saves the screenshot in the same directory.
-            screenshot()
+            ScreenShots.ScreenShot.screenshot()
             speak("Screenhot taken")
 
         elif 'cpu' in query:                                                                    # speaks the state of CPU in your computer.
             CPU.CPU.cpu()
 
         elif 'joke' in query:                                                                   # speaks a random joke from pyjokes package in Package.py file
-            jokes()
+            Jokes.Jokes.jokes()
 
         elif 'offline' in query:                                                                # quits the program when there is a word 'offline' in your query.
             quit()
